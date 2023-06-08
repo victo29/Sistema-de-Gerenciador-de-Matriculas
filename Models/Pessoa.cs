@@ -9,10 +9,10 @@ namespace ProjetoCursos.models
     {
         public Pessoa() { }
 
-        public Pessoa(string nome, string sobrenome)
+        public Pessoa(string nome)
         {
             Nome = nome;
-            Sobrenome = sobrenome;
+           
         }
 
         private string _nome;
@@ -30,22 +30,10 @@ namespace ProjetoCursos.models
             }
         }
 
-        private string _sobrenome;
-        public string Sobrenome
-        {
-            get => _sobrenome.ToUpper();
-            set
-            {
-                if (value == "")
-                {
-                    throw new ArgumentException("O sobrenome não pode ser vazio");
+        
+        
 
-                }
-                _sobrenome = value;
-            }
-        }
-
-        public string NomeCompleto => $"{Nome} {Sobrenome}".ToUpper();
+        public string NomeCompleto => $"{Nome}".ToUpper();
 
        
     }

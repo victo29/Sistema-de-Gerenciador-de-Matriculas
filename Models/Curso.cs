@@ -17,6 +17,13 @@ namespace ProjetoCursos.models
 
         public List<Pessoa> Alunos { get; set; }
 
+        private string Banco { get; set; }
+        
+        
+
+
+
+
         public void AdicionarAluno(Pessoa aluno)
         {
             Alunos.Add(aluno);
@@ -45,6 +52,7 @@ namespace ProjetoCursos.models
                 Console.WriteLine(texto);
             }
         }
+
 
 
     }

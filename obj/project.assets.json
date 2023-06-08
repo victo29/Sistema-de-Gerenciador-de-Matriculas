@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Victor\\Documents\\VSAprendizado\\ProjetoAdicionadorDeAlunos\\ProjetoCurso.csproj",
+      "projectUniqueName": "D:\\Victor\\Documents\\VSAprendizado\\Projetos\\SistemaGerenciadorDeMatriculas\\ProjetoCurso.csproj",
       "projectName": "ProjetoCurso",
-      "projectPath": "D:\\Victor\\Documents\\VSAprendizado\\ProjetoAdicionadorDeAlunos\\ProjetoCurso.csproj",
+      "projectPath": "D:\\Victor\\Documents\\VSAprendizado\\Projetos\\SistemaGerenciadorDeMatriculas\\ProjetoCurso.csproj",
       "packagesPath": "C:\\Users\\Victor\\.nuget\\packages\\",
-      "outputPath": "D:\\Victor\\Documents\\VSAprendizado\\ProjetoAdicionadorDeAlunos\\obj\\",
+      "outputPath": "D:\\Victor\\Documents\\VSAprendizado\\Projetos\\SistemaGerenciadorDeMatriculas\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Victor\\AppData\\Roaming\\NuGet\\NuGet.Config"
