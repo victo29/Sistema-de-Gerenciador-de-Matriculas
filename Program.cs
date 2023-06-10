@@ -4,26 +4,23 @@ bool liberação = true;
 
 do
 {
-    Console.WriteLine("Quantos Alunos você pretende cadastrar?");
+    Console.Write("Quantos Alunos você pretende cadastrar: ");
     string a = Console.ReadLine();
     int quantidadeAlunos = Convert.ToInt32(a);
 
-    Console.WriteLine("Digite o nome do curso:");
+    Console.Write("Digite o nome do curso: ");
     Curso cursos = new Curso(Console.ReadLine());
     cursos.Alunos = new List<Pessoa>();
 
     for (int i = 0; i < quantidadeAlunos; i++)
     {
         Console.Clear();
-        Pessoa p = new Pessoa();
-        Console.WriteLine($"Digite o nome completo do seu {i + 1}° aluno:");
-        p.Nome = Console.ReadLine();
-    
-        cursos.AdicionarAluno(p);
+        Console.WriteLine($"Digite o nome completo do seu {i +1}° aluno ");
+        cursos.Adicionador(Console.ReadLine());
     }
-
     Console.Clear();
     cursos.ListarAlunos();
+    
     Console.WriteLine("Deseja cadastrar outro curso? S/N");
     string outroCurso = Console.ReadLine();
 
@@ -31,7 +28,8 @@ do
     {
         liberação = true;
     }
-    else{
+    else
+    {
         liberação = false;
     }
-}while(liberação);
+} while (liberação);
