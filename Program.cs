@@ -1,66 +1,72 @@
 ﻿using SistemaGerenciador.models;
 
-Curso Ref;
-Curso1 curso1 = new Curso1();
-Curso2 curso2 = new Curso2();
+
+Curso[] cursos = new Curso[3];
+
+
 
 bool liberacao = true;
-int valor = 0;
+int contador = 0;
 
 do
 {
     Console.Write("Quantos Alunos você pretende cadastrar: ");
-    string a = Console.ReadLine();
-    int quantidadeAlunos = Convert.ToInt32(a);
-    valor++;
-
-
-
-    if (valor == 2)
+    int quantidadeAlunos = 0; 
+    
+    try
     {
-        Ref = curso2;
+        quantidadeAlunos = Convert.ToInt32(Console.ReadLine());
     }
-    else
+    catch
     {
-        Ref = curso1;
+        Console.Write("O valor passado não é valido, tente novamente: ");
+        quantidadeAlunos = Convert.ToInt32(Console.ReadLine());
     }
+
+
+
 
     Console.Write("Digite o nome do curso: ");
-    Ref.Nome = Console.ReadLine();
-    Ref.Alunos = new List<Pessoa>();
+    
+    cursos[contador].Nome = Console.ReadLine();
+   
+
+    cursos[contador].Alunos = new List<Pessoa>();
 
     for (int i = 0; i < quantidadeAlunos; i++)
     {
         Console.Clear();
-        Console.WriteLine($"Digite o nome completo do seu {i + 1}° aluno ");
-        Ref.Adicionador(Console.ReadLine());
+        Console.Write($"Digite o nome completo do seu {i + 1}° aluno ");
+        cursos[contador].Adicionador(Console.ReadLine());
     }
     Console.Clear();
-    Ref.ListarAlunos();
+    cursos[contador].ListarAlunos();
 
-    if(valor < 2){
-
-    
-    Console.WriteLine("Deseja cadastrar outro curso? S/N");
-    string outroCurso = Console.ReadLine();
-
-    if (outroCurso == "S" || outroCurso == "s")
+    if (contador == 2)
     {
-        liberacao = true;
-    }
-    else
-    {
-        liberacao = false;
+
         Console.Clear();
-    }
-    }
-    else{
-        Console.Clear();
-        Console.WriteLine("O Limite são apenas 2 cursos");
+        Console.WriteLine("O Limite são apenas 3 cursos");
         liberacao = false;
         Thread.Sleep(5000);
         Console.Clear();
 
+    }
+    else
+    {
+        Console.WriteLine("Deseja cadastrar outro curso? S/N");
+        string outroCurso = Console.ReadLine();
+
+        if (outroCurso == "S" || outroCurso == "s")
+        {
+            liberacao = true;
+            contador++;
+        }
+        else
+        {
+            liberacao = false;
+            Console.Clear();
+        }
     }
 
 } while (liberacao);
@@ -69,12 +75,26 @@ do
 Console.WriteLine("PROCESSANDO OS DADOS.........");
 Thread.Sleep(3000);
 Console.Clear();
-curso1.ListarAlunos();
 
-if(valor == 2){
-Console.WriteLine("---------------------");
-curso2.ListarAlunos();
+
+if (contador == 2)
+{
+    cursos[0].ListarAlunos();
+    Console.WriteLine("---------------------");
+    cursos[1].ListarAlunos();
+    Console.WriteLine("---------------------");
+    cursos[2].ListarAlunos();
+    Console.WriteLine("---------------------");
+
 }
-else{
-    Console.WriteLine("FIM!");
+else if (contador == 1)
+{
+    cursos[0].ListarAlunos();
+    Console.WriteLine("---------------------");
+    cursos[1].ListarAlunos();
 }
+else
+{
+    cursos[0].ListarAlunos();
+}
+

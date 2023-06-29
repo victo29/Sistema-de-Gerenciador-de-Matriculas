@@ -5,14 +5,9 @@ using System.Threading.Tasks;
 
 namespace SistemaGerenciador.models
 {
-    public class Curso
+    public struct Curso
     {
-        public Curso() { }
-        public Curso(string nome)
-        {
-            Nome = nome;
-        }
-
+        
         
 
         public string Nome { get; set; }
@@ -41,9 +36,5 @@ namespace SistemaGerenciador.models
                 Alunos.Add(p);
             
         }
-
-
-
     }
-
 }
